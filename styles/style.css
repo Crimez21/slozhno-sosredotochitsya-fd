@@ -1,5 +1,444 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
+/* body */
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  font-size: 18px;
+  background-color: var(--bg-color, rgba(0, 0, 40, 1));
+  background-image: var(--bg-image, url(../images/cover-image-dark.png));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* header */
+
+.header {
+  display: grid;
+  margin-bottom: 40px;
+  padding: var(--header-padding);
+}
+
+.rec::after {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-left: 10px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 2px rgba(255, 0, 112, 1);
+  background-color: rgba(255, 0, 112, 1);
+}
+
+.rec {
+  position: absolute;
+  right: 20px;
+  display: flex;
+  justify-self: end;
+  align-items: center;
+  color: rgba(255, 0, 112, 1);
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 25px;
+  text-transform: uppercase;
+}
+
+.header__theme-menu-button {
+  border: none;
+  color: var(--header-button-color);
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 18px;
+  background-color: transparent;
+}
+
+.header__theme-menu-button_active {
+  border: var(--border);
+  padding: 2px 13px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  justify-self: end;
+  align-items: center;
+  gap: 14.5px;
+  padding-top: 38px;
+}
+
+.header__title {
+  margin-bottom: 54px;
+  padding-top: 68px;
+  color: var(--big-title-color);
+  font-weight: 700;
+  font-size: var(--title-size);
+  line-height: var(--tittle-lh);
+  text-shadow: var(--big-title-shadow);
+}
+
+.header__paragraph {
+  margin-bottom: 31px;
+  color: var(--subtitle-color);
+  font-weight: 700;
+  font-size: 1em;
+  line-height: 23.4px;
+}
+
+/* general */
+
+.cube-top {
+  display: block;
+  justify-self: end;
+  align-self: start;
+  width: 25px;
+  height: 25px;
+  border-top: var(--border);
+  border-right: var(--border);
+  background-color: transparent;
+}
+
+.cube-bottom {
+  display: block;
+  justify-self: start;
+  align-self: end;
+  width: 25px;
+  height: 25px;
+  border-bottom: var(--border);
+  border-left: var(--border);
+  background-color: transparent;
+}
+
+.title-decor {
+  background-color: var(--decor-color);
+  inline-size: 100%;
+}
+
+.section-list-text-link {
+  text-decoration: none;
+  text-shadow: var(--link-shadow);
+}
+
+.section-list-text-link:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--link-hover);
+}
+
+.section-list-text-link:focus {
+  outline: none;
+}
+
+.section-list-text-link:focus-visible {
+  outline: var(--link-focus);
+}
+
+.header__theme-menu-button:hover {
+  border: var(--button-hover);
+  padding: 1.5px 13px;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: var(--button-focus);
+  padding: 1.5px 13px;
+}
+
+/* main */
+
+.main {
+  padding: var(--padding);
+}
+
+.section-list {
+  list-style: none;
+}
+
+.section-title {
+  margin-bottom: 20px;
+  color: var(--title-color);
+  font-weight: 700;
+  font-size: 1em;
+  line-height: 23.4px;
+}
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section-subtitle {
+  color: var(--subtitle-color);
+  font-weight: 700;
+  font-size: 1em;
+  line-height: 23.4px;
+}
+
+.section-list-text {
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 23.4px;
+}
+
+.section-list-title {
+  color: var(--list-title);
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 23.4px;
+}
+
+.section-margin {
+  margin-bottom: 50px;
+}
+
+.section-list-item:first-child {
+  margin-top: 20px;
+}
+
+.section-list-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+/* image */
+
+.image {
+  display: block;
+  margin-top: 10px;
+  object-fit: cover;
+  inline-size: 100%;
+  block-size: 100%;
+  max-block-size: 100%;
+}
+
+.image-section {
+  margin-bottom: 40px;
+}
+
+/* footer */
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 25px 1fr 25px;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  min-height: 668px;
+  padding: var(--footer-padding);
+}
+
+.footer__title {
+  justify-self: center;
+  align-self: center;
+  color: var(--big-title-color);
+  font-weight: 700;
+  font-size: var(--title-size);
+  line-height: var(--tittle-lh);
+  text-shadow: var(--big-title-shadow-footer);
+}
+
+/* media */
+
+@media (width >= 768px) {
+  .page {
+    --title-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    --tittle-lh: 99px;
+  }
+  .main {
+    --padding: 0px 20px;
+  }
+}
+
+@media (width >= 768px) {
+  .header {
+    --header-padding: 20px 20px 20px 0;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 17px;
+    min-height: 1024px;
+  }
+
+  .header__theme-menu {
+    grid-column: 2;
+  }
+  .header__theme-menu-list {
+    padding-top: 39px;
+  }
+  .header__title {
+    grid-column: span 2;
+    align-self: center;
+    margin-bottom: 54px;
+    padding-top: 22px;
+  }
+  .header__paragraph {
+    grid-column: 2;
+    align-self: center;
+    max-width: 364px;
+    margin-bottom: -18px;
+  }
+  .cube-bottom-header {
+    grid-column: 1;
+    margin-left: 20px;
+  }
+  .cube-top-header {
+    grid-column: 2;
+  }
+  .header .rec {
+    right: 30px;
+    grid-column: 2;
+  }
+}
+
+@media (width >= 768px) {
+  .section-margin {
+    margin-bottom: 80px;
+  }
+  .centralization {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: baseline;
+    gap: 20px;
+  }
+}
+
+@media (width >= 768px) {
+  .concentration .section-title-concentration {
+    max-width: min(236px, 100%);
+
+    margin-bottom: 0;
+  }
+}
+
+@media (width >= 768px) {
+  .goldFish {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    column-gap: 20px;
+  }
+
+  .section-list-goldFish {
+    grid-column: 2;
+  }
+  .goldFish .section-title-goldFish {
+    grid-column: 1;
+    grid-row: span 2;
+    margin-bottom: 0;
+  }
+}
+
+@media (width >= 768px) {
+  .card-image {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+  }
+  .section-image_sunset {
+    grid-column: 1 / 3;
+  }
+  .section-image_icecream {
+    grid-column: 3 / 4;
+    grid-row: span 2;
+  }
+  .section-image_tape {
+    grid-column: 1;
+    grid-row: span 2;
+  }
+  .section-image_street {
+    grid-column: span 2;
+  }
+  .card-image .image {
+    margin-top: 0;
+  }
+  .section-subtitle-image {
+    margin-bottom: 20px;
+  }
+  .image-section {
+    margin-bottom: 60px;
+  }
+}
+
+@media (width >= 768px) {
+  .footer {
+    --footer-padding: 20px;
+    min-height: 1024px;
+  }
+}
+
+@media (width >= 1024px) {
+  .header {
+    --header-padding: 20px 20px 20px 0;
+    grid-template-columns: 2fr 133px 115px 2fr;
+    column-gap: 0;
+    min-height: 768px;
+  }
+  .header__theme-menu-list {
+    flex-direction: row;
+    padding-top: 0;
+  }
+  .header__theme-menu {
+    grid-column: 2 / 4;
+
+    grid-row: 1;
+  }
+  .header__title {
+    grid-column: 1/ 5;
+
+    padding-top: 217px;
+  }
+
+  .cube-top-header {
+    grid-column: 4;
+    grid-row: 1;
+  }
+  .cube-bottom-header {
+    grid-row: 4;
+    margin-left: 20px;
+  }
+  .header__paragraph {
+    grid-column: 3 / 5;
+    grid-row: 4;
+    align-self: start;
+    max-width: unset;
+    margin-bottom: 67px;
+  }
+}
+
+@media (width >= 1024px) {
+  .centralization {
+    gap: 10px;
+  }
+}
+
+@media (width >= 1024px) {
+  .section-list-concentration {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .concentration .section-list-item:first-child {
+    margin-top: 0;
+  }
+  .concentration .section-title-concentration {
+    max-width: 315px;
+
+    margin-bottom: 20px;
+  }
+}
+
+@media (width >= 1024px) {
+  .goldFish {
+    column-gap: 10px;
+  }
+}
+
+@media (width >= 1024px) {
+  .footer {
+    min-height: 768px;
+  }
+  .footer-title {
+    --title-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
 }
